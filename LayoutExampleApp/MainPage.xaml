@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="LayoutExampleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LayoutExampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="800" Height="600"
+    >
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFEDEEEC" Offset="0.722"/>
+                <GradientStop Color="#FFD1E69A" Offset="0.113"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- VASEN-->
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="Employee basic information: "/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name:" Width="100"/>
+                <TextBox x:Name="nameTextBox" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Email:" Width="100"/>
+                <TextBox x:Name="emailTextBox" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Password" Width="100"/>
+                <PasswordBox x:Name="passwordBox" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="User Level:"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="userCheckBox" Content="Normal User" IsChecked="True"/>
+                <CheckBox x:Name="adminCheckBox" Content="Admin" IsChecked="False"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="saveButton" Content="Save" Background="#33CD6005" Foreground="Black" Click="saveButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <!-- OIKEA-->
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Image: "/>
+            <Image Source="Assets/Images/employee06.png" Width="70" Height="100" HorizontalAlignment="Left"/>
+            <StackPanel>
+                <Button x:Name="browseButton" Content="Browse" Background="#33C34D16"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
